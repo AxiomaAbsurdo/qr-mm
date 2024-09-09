@@ -10,19 +10,27 @@ export function LinkHub() {
       <Dock className="dock-horizontal">
         {/* GitHub */}
         <DockIcon className="size-6">
+        <div className="tooltip" data-tooltip="GitHub">
           <Icons.gitHub className="dock-icon" />
+        </div>
         </DockIcon>
         {/* LinkedIn */}
         <DockIcon>
+        <div className="tooltip" data-tooltip="LinkedIn">
           <Icons.linkedin className="dock-icon" />
+        </div>
         </DockIcon>
         {/* WhatsApp */}
         <DockIcon>
+        <div className="tooltip" data-tooltip="WhatsApp">
           <Icons.whatsapp className="dock-icon" />
+          </div>
         </DockIcon>
         {/* Calendly */}
         <DockIcon>
+        <div className="tooltip" data-tooltip="Calendly">
           <Icons.calendly className="dock-icon" />
+        </div>
         </DockIcon>
       </Dock>
     </div>

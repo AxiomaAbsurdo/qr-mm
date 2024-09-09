@@ -75,6 +75,7 @@ body {
   flex-direction: row;
   justify-content: space-around; /* Adjust as needed */
   width: 100%;
+  margin-top: 1em;
 }
 
 .dock-icon {
@@ -88,4 +89,32 @@ body {
 
 .dock-horizontal a:visited {
   color: inherit; /* Prevent color change after click */
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip); /* The tooltip text */
+  position: absolute;
+  bottom: 100%; /* Position above the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none; /* Prevent the tooltip from interfering with the hover */
+  z-index: 10;
+}
+
+.tooltip:hover::after {
+  opacity: 1;
 }
