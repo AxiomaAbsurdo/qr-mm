@@ -12,7 +12,9 @@
     "lint": "eslint.",
     "lint:fix": "eslint. --fix",
     "precommit": "npm run lint",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "start:web": "webpack serve --mode development",
+    "build:prod": "webpack --mode production"
   },
   "keywords": [],
   "author": "",

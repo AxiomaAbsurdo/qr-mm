@@ -3,20 +3,17 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const mode = process.env.NODE_ENV || "development";
-const outputFilename =
-  mode === "production" ? "bundle.[contenthash].js" : "bundle.js";
 
 module.exports = {
   mode,
   entry: "./src/index.tsx",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: outputFilename,
+    filename: "[name].[contenthash].js",
     publicPath: "/",
-    chunkFilename: "[name].[contenthash].chunk.js", // Add chunk filename
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js"],
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
     alias: {
       src: path.resolve(__dirname, "src"),
     },
@@ -24,21 +21,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.(ts|tsx)$/,
         use: "ts-loader",
         exclude: /node_modules/,
       },
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
-      },
-      {
-        test: /\.(png|jpg|jpeg|gif|svg)$/,
-        use: "file-loader", // Add image loader
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: "file-loader", // Add font loader
       },
     ],
   },
@@ -47,24 +36,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./index.html",
       filename: "index.html",
-      minify: mode === "production", // Minify HTML in production mode
     }),
   ],
-  optimization: {
-    splitChunks: {
-      chunks: "all",
-      minSize: 10000,
-      minChunks: 1,
-      maxAsyncRequests: 30,
-      maxInitialRequests: 30,
-      enforceSizeThreshold: 50000,
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: "vendor",
-          chunks: "all",
-        },
-      },
+  devServer: {
+    contentBase: path.join(__dirname, "public"),
+    static: {
+      directory: path.join(__dirname, "./public"),
     },
+    historyApiFallback: true,
+    hot: true,
   },
 };
