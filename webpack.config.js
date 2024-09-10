@@ -11,7 +11,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: outputFilename,
-    publicPath: "/",
+    publicPath: "/", // Ensure assets are served from the root
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
@@ -35,7 +35,8 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: "./index.html", // Adjust this path if the index.html is outside the src folder
+      filename: "index.html", // Ensure the output file is correctly named
     }),
   ],
 };

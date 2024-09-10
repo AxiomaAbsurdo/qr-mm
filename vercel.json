@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "./package.json",
+      "src": "package.json",
       "use": "@vercel/static-build",
       "config": { "distDir": "dist" }
     }
@@ -12,10 +12,5 @@
       "src": "/(.*)",
       "dest": "/dist/$1"
     }
-  ],
-  "build": {
-    "env": {
-      "NODE_ENV": "production"
-    }
-  }
+  ]
 }
