@@ -8,12 +8,10 @@ module.exports = {
   mode,
   entry: "./src/index.tsx",
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "[name].[contenthash].js",
-    publicPath: "/",
+    publicPath: "./dist",
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx"],
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".html"],
     alias: {
       src: path.resolve(__dirname, "src"),
     },
@@ -39,9 +37,8 @@ module.exports = {
     }),
   ],
   devServer: {
-    contentBase: path.join(__dirname, "public"),
     static: {
-      directory: path.join(__dirname, "./public"),
+      directory: path.join(__dirname, "public"),
     },
     historyApiFallback: true,
     hot: true,
