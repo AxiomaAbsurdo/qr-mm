@@ -8,7 +8,8 @@ module.exports = {
   mode,
   entry: "./src/index.tsx",
   output: {
-    publicPath: "./dist",
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx", ".html"],
@@ -32,8 +33,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: "./index.html",
-      filename: "index.html",
+      template: "./src/index.html",
     }),
   ],
   devServer: {
