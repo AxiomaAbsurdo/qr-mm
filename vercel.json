@@ -5,7 +5,7 @@
       "src": "index.tsx",
       "use": "@vercel/static-build",
       "config": {
-        "buildCommand": "webpack --mode production",
+        "buildCommand": "webpack serve --mode production",
         "outputDirectory": ".vercel/output"
       }
     }
