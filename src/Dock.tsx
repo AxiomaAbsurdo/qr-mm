@@ -136,7 +136,7 @@ const Icons = {
     </IconWrapper>
   ),
   homesite: (props: IconProps) => (
-    <IconWrapper href="https://github.com/AxiomaAbsurdo">
+    <IconWrapper href="https://axiomaabsurdo.github.io/">
       <svg viewBox="0 0 24 24" {...props} style={iconStyle}>
         <path
           fill="currentColor"
