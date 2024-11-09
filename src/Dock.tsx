@@ -112,7 +112,7 @@ const Icons = {
     </IconWrapper>
   ),
   ltf: (props: IconProps) => (
-    <IconWrapper href="latam-tech-factory-landing.vercel.app">
+    <IconWrapper href="https://latam-tech-factory-landing-gz080szhy-axiomaabsurdos-projects.vercel.app/">
       <svg viewBox="0 0 24 24" {...props} style={iconStyle}>
         <path
           d="M4 8C4.55228 8 5 7.55228 5 7C5 6.44772 4.55228 6 4 6C3.44772 6 3 6.44772 3 7C3 7.55228 3.44772 8 4 8Z"
