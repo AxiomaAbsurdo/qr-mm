@@ -15,7 +15,7 @@ const AppContent: React.FC = () => {
           <div className="card-top-right">
             <ThemeSwitcher />
           </div>
-          <img src="https://media.licdn.com/dms/image/v2/D4D03AQHsvkDJv8uaXQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1700684772171?e=1731542400&v=beta&t=8TXt4hihSniu-XAAADDfT47lO4ri1gn4kF7QIHIObTw" alt="Profile" className="profile-picture" />
+          <img src="https://lh3.googleusercontent.com/a/ACg8ocIc9COsif6MnKcjDT6dIQki94kgI7auRK3aiZbKCFNJja2ljr0g=s288-c-no" alt="Profile" className="profile-picture" />
           <h1>Matias Mortara</h1>
           <h2>Software Solution Architect Cybersecurity Specialist</h2>
           <LinkHub />
